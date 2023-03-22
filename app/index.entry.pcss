@@ -106,3 +106,66 @@ body {
     color: hsla(0, 0%, 100%, .6);
   }
 }
+
+.wt-container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.wt-layout__header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: 71px;
+  margin: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px rgba(39, 40, 44, 0.2);
+
+
+  color: #27282c;
+  font-family: SFProText, system-ui;
+  font-stretch: normal;
+  letter-spacing: normal;
+
+  & .container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  & h2 {
+    width: 79px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  & a {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(39, 40, 44, 0.7);
+    text-decoration: none;
+
+    &:active {
+      color: rgba(39, 40, 44, 0.7);
+    }
+
+    &:hover {
+      color: #f76707;
+    }
+  }
+
+  & button {
+    width: 134px;
+    border: solid 1px rgba(39, 40, 44, 0.4);
+    border-radius: 25px;
+    padding: 4px 19px 4px 18px;
+    background-color: white;
+  }
+}
+
