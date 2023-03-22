@@ -345,7 +345,98 @@ body {
             color: rgba(39, 40, 44, 0.7);
           }
         }
+      }
+    }
+  }
+}
 
+.extensions {
+  & .wt-container {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    column-gap: 132px;
+    row-gap: 56px;
+
+    & h2 {
+      grid-row: 1;
+      font-family: Gotham, sans-serif;
+      font-size: 31px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: -0.5px;
+      color: #27282c;
+    }
+
+    & .extensions-pics {
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 72px);
+      column-gap: 64px;
+      row-gap: 48px;
+
+      & img {
+        width: 72px;
+        height: 72px;
+      }
+    }
+
+    & .extensions-text {
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+      column-gap: 100px;
+
+
+      & .extensions-text-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        & a {
+          font-family: SFProText, system-ui;
+          font-size: 20px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.4;
+          letter-spacing: normal;
+          color: #27282c;
+          text-decoration: none;
+
+          &:hover {
+            color: #f76707;
+          }
+        }
+
+        & .extensions {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+        }
+
+        & .box {
+          width: border-box;
+          height: 24px;
+          padding: 4px 15px 4px 15px;
+          object-fit: contain;
+          border-radius: 4px;
+          background-color: rgba(39, 40, 44, 0.05);
+
+          & p {
+            font-family: SFProText, system-ui;
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            text-align: center;
+            color: rgba(39, 40, 44, 0.7);
+          }
+        }
       }
     }
   }
