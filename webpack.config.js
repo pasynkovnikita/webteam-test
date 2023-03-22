@@ -45,7 +45,7 @@ const webpackConfig = {
           }, 'svg-transform-loader/encode-query', 'postcss-loader'],
       },
       {
-        test: /\.(jpg|png|gif|ttf)$/,
+        test: /\.(jpg|png|gif|ttf|otf)$/,
         loader: 'file-loader',
         options: {
           name: 'static/[name].[hash].[ext]',
