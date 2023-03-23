@@ -457,6 +457,7 @@ body {
     grid-template-columns: 480px 1fr;
     column-gap: 132px;
     row-gap: 56px;
+    margin-bottom: 84px;
 
     & .values-text {
       display: flex;
@@ -489,6 +490,59 @@ body {
         }
       }
     }
+  }
+}
+
+.toolbox {
+  background-color: #323236;
+
+  & .wt-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+      & .toolbox-text {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        & h2 {
+          font-family: Gotham, sans-serif;
+          font-size: 28px;
+          font-weight: 300;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.43;
+          letter-spacing: normal;
+          color: #fff;
+        }
+
+        & p {
+          font-family: SFProText, sans-serif;
+          font-size: 18px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.56;
+          letter-spacing: normal;
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        & a {
+          font-family: SFProText, sans-serif;
+          font-size: 18px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.56;
+          letter-spacing: normal;
+          color: #f76707;
+          text-decoration: none;
+          &:active {
+            color: #f76707;
+          }
+        }
+      }
   }
 }
 
