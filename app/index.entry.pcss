@@ -109,11 +109,12 @@ body {
 
 .wt-container {
   max-width: 1200px;
-  display: flex;
-  //align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 132px;
 }
 
-.wt-layout__header {
+.header {
   width: 100%;
   position: sticky;
   top: 0;
@@ -130,6 +131,12 @@ body {
   font-family: SFProText, system-ui;
   font-stretch: normal;
   letter-spacing: normal;
+
+  .wt-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   & .container {
     display: flex;
@@ -166,22 +173,14 @@ body {
     border-radius: 25px;
     padding: 4px 19px 4px 18px;
     background-color: white;
+
   }
+
 }
 
 
 .all-products {
-  display: flex;
   font-family: Gotham, system-ui;
-  justify-content: space-between;
-  width: 100%;
-
-  & .wt-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 132px;
-  }
 
   & img {
     width: 484px;
@@ -192,6 +191,7 @@ body {
     font-size: 60px;
     font-weight: 900;
     font-style: normal;
+    font-stretch: normal;
     line-height: 1.07;
     letter-spacing: -1.5px;
     color: #27282c;
@@ -212,21 +212,29 @@ body {
   & button {
     width: 174px;
     height: 48px;
-    padding: 12px 19px 12px 27px;
+    padding: 0;
     border-radius: 25px;
     border: none;
     background-color: #f76707;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #dc5b06;
+      color: white;
+    }
   }
 
   & a {
     text-decoration: none;
-    color: white;
-    width: 174px;
-    height: 48px;
-    padding: 12px 19px 12px 27px;
-    border-radius: 25px;
-    border: none;
-    background-color: #f76707;
+    font-family: SFProText, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
 
     &:active {
       color: white;
@@ -247,30 +255,27 @@ body {
 
 
 .ides {
-  & .wt-container {
+
+  & .ides-left-col {
     display: flex;
-    gap: 132px;
+    flex-direction: column;
 
-    & .ides-left-col {
-      display: flex;
-      flex-direction: column;
+    & h2 {
+      font-family: Gotham, sans-serif;
+      font-size: 31px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: -0.5px;
+      color: #27282c;
+    }
 
-      & h2 {
-        font-family: Gotham, sans-serif;
-        font-size: 31px;
-        font-weight: 500;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.29;
-        letter-spacing: -0.5px;
-        color: #27282c;
-      }
-
-      & .ides-pics {
-        display: grid;
-        grid-template-columns: repeat(4, 72px);
-        grid-column-gap: 64px;
-        grid-row-gap: 48px;
+    & .ides-pics {
+      display: grid;
+      grid-template-columns: repeat(4, 72px);
+      grid-column-gap: 64px;
+      grid-row-gap: 48px;
 
         & img {
           width: 72px;
@@ -347,9 +352,6 @@ body {
 
 .extensions {
   & .wt-container {
-    display: grid;
-    grid-template-columns: 480px 1fr;
-    column-gap: 132px;
     row-gap: 56px;
 
     & h2 {
@@ -498,6 +500,10 @@ body {
       flex-direction: column;
       gap: 12px;
 
+      & a:hover {
+        color: #dc5b06;
+      }
+
       & h2 {
         font-family: Gotham, sans-serif;
         font-size: 28px;
@@ -536,7 +542,6 @@ body {
       line-height: 1.43;
       letter-spacing: normal;
       color: #27282c;
-      width: 33%;
     }
 
     & .logos {
@@ -558,6 +563,10 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 132px;
+
+    & a:hover {
+      color: #dc5b06;
+    }
 
     & h2 {
       grid-row: 1;
@@ -594,14 +603,8 @@ body {
       color: rgba(39, 40, 44, 0.7);
     }
 
-    & a {
-      text-decoration: none;
-      color: #f76707;
 
-      &:active {
-        color: #f76707;
-      }
-    }
+
 
     & .faq-left-top {
       grid-row: 2;
@@ -724,6 +727,11 @@ body {
           letter-spacing: normal;
           text-align: center;
           color: #fff;
+          transition: background-color 0.2s ease-in-out;
+
+          &:hover {
+            background-color: #dc5b06;
+          }
 
         }
 
@@ -744,7 +752,9 @@ body {
           object-fit: contain;
         }
 
-
+        & a:hover {
+          color: #dc5b06;
+        }
       }
 
     }
@@ -761,6 +771,7 @@ a {
   letter-spacing: normal;
   color: #f76707;
   text-decoration: none;
+  transition: color .2s ease-in-out;
 
   &:active {
     color: #f76707;
