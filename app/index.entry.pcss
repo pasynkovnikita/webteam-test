@@ -1,34 +1,48 @@
 @font-face {
-  font-family: SFProText;
-  src: url("./static/fonts/SFProText-Regular.ttf");
+  font-family: 'SFProText-Regular';
+  src: url("./static/fonts/SFProText-Regular.ttf") format("truetype"),
+  url("./static/fonts/SFProText-Regular.otf") format("opentype"),
+  url("./static/fonts/SFProText-Regular.woff") format("woff"),
+  url("./static/fonts/SFProText-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: SFProText;
-  src: url("./static/fonts/SFProText-Light.ttf");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: SFProText;
-  src: url("./static/fonts/SFProText-Bold.ttf");
+  font-family: 'SFProText-Bold';
+  src: url("./static/fonts/SFProText-Bold.ttf") format("truetype"),
+  url("./static/fonts/SFProText-Bold.otf") format("opentype"),
+  url("./static/fonts/SFProText-Bold.woff") format("woff"),
+  url("./static/fonts/SFProText-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url("./static/fonts/Gotham-Bold.ttf") format("truetype"),
+  url("./static/fonts/Gotham-Bold.otf") format("opentype"),
+  url("./static/fonts/Gotham-Bold.woff") format("woff"),
+  url("./static/fonts/Gotham-Bold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
 
 @font-face {
-  font-family: Gotham;
-  src: url("./static/fonts/Gotham-Black.otf");
+  font-family: 'Gotham-Black';
+  src: url("./static/fonts/Gotham-Black.otf") format("opentype"),
+  url("./static/fonts/Gotham-Black.ttf") format("truetype"),
+  url("./static/fonts/Gotham-Black.woff") format("woff"),
+  url("./static/fonts/Gotham-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Gotham;
-  src: url("./static/fonts/GothamLight.ttf");
+  font-family: 'Gotham-Light';
+  src: url("./static/fonts/Gotham-Light.ttf") format("truetype"),
+  url("./static/fonts/Gotham-Light.otf") format("opentype"),
+  url("./static/fonts/Gotham-Light.woff") format("woff"),
+  url("./static/fonts/Gotham-Light.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -54,10 +68,14 @@ body {
 }
 
 :root {
-  --highlight-color: #c8ff00;
-  --secondary-highlight-color: #6516b5;
-  --dim-color: #696969;
-  --gray-color: #afb1b3;
+  --athens-gray: #eaeaec;
+  --tomato: #ec5424;
+  --dark: #161616;
+  --dove-gray: #696969;
+  --cod-gray: #3c3f43;
+  --silver-gray: #afb1b3;
+  --azure: #27a4f7;
+  --orange: #f76707;
 }
 
 .example-for-breakpoints {
@@ -115,6 +133,17 @@ body {
   }
 }
 
+h1 {
+  font-family: Gotham, sans-serif;
+  font-size: 60px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.07;
+  letter-spacing: -1.5px;
+  color: #27282c;
+}
+
 .wt-container {
   max-width: 1200px;
   display: grid;
@@ -130,8 +159,14 @@ body {
   }
 
   @media (--sm) {
+    &-mobile {
+      padding: 0 16px;
+      row-gap: 24px;
+    }
+
     grid-template-columns: 1fr;
     column-gap: 0;
+    padding: 0 16px;
   }
 }
 
@@ -163,6 +198,49 @@ body {
     display: flex;
     align-items: center;
     gap: 24px;
+
+    & button {
+      width: 134px;
+      border: solid 1px rgba(39, 40, 44, 0.4);
+      border-radius: 25px;
+      padding: 4px 19px 4px 18px;
+      background-color: white;
+    }
+
+    @media (--sm) {
+      display: none;
+    }
+  }
+
+  & .dropdown {
+    display: none;
+
+    & img {
+      width: 16px;
+      height: 16px;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+
+    }
+
+    @media (--sm) {
+      display: inline-block;
+      position: relative;
+
+      & .dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        z-index: 1;
+      }
+
+      &:hover .dropdown-content {
+        display: block;
+      }
+    }
   }
 
   & h2 {
@@ -188,20 +266,11 @@ body {
     }
   }
 
-  & button {
-    width: 134px;
-    border: solid 1px rgba(39, 40, 44, 0.4);
-    border-radius: 25px;
-    padding: 4px 19px 4px 18px;
-    background-color: white;
-
-  }
-
 }
 
 
 .all-products {
-  font-family: Gotham, system-ui;
+  font-family: Gotham, sans-serif;
 
   & .wt-container {
 
@@ -223,17 +292,11 @@ body {
     align-self: flex-start;
     @media (--sm) {
       grid-area: img;
+      margin-top: 64px;
     }
   }
 
   & h1 {
-    font-size: 60px;
-    font-weight: 900;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.07;
-    letter-spacing: -1.5px;
-    color: #27282c;
     @media (--sm) {
       grid-area: all-products;
     }
@@ -384,6 +447,10 @@ body {
         grid-area: resharper;
       }
 
+      &[alt="rider"] {
+        grid-area: rider;
+      }
+
       &[alt="appcode"] {
         grid-area: appcode;
       }
@@ -396,9 +463,6 @@ body {
         grid-area: clion;
       }
 
-      &[alt="rider"] {
-        grid-area: rider;
-      }
 
       &[alt="rubymine"] {
         grid-area: rubymine;
@@ -489,7 +553,7 @@ body {
 
     @media (--md) {
       justify-content: space-between;
-      column-gap: normal;
+      column-gap: unset;
     }
 
     &-item {
@@ -595,109 +659,109 @@ body {
       }
     }
   }
-    & .extensions-pics {
-      grid-row: 2;
-      display: grid;
-      grid-template-columns: repeat(3, 72px);
-      column-gap: 64px;
 
-      @media (--lg) {
-        justify-content: space-between;
+  & .extensions-pics {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 72px);
+    column-gap: 64px;
 
+    @media (--lg) {
+      justify-content: space-between;
+
+    }
+
+    @media (--md) {
+      column-gap: normal;
+    }
+    row-gap: 48px;
+
+  }
+  & img {
+    width: 72px;
+    height: 72px;
+
+    @media (--sm) {
+      &[alt="re-sharper"] {
+        grid-area: resharper;
       }
 
-      @media (--md) {
-        column-gap: normal;
+      &[alt="resharper-c"] {
+        grid-area: resharper-c;
       }
-      row-gap: 48px;
 
-      & img {
-        width: 72px;
-        height: 72px;
+      &[alt="dot-trace"] {
+        grid-area: dottrace;
+      }
 
-        @media (--sm) {
-          &[alt="re-sharper"] {
-            grid-area: resharper;
-          }
+      &[alt="dot-cover"] {
+        grid-area: dotcover;
+      }
 
-          &[alt="resharper-c"] {
-            grid-area: resharper-c;
-          }
+      &[alt="dot-memory"] {
+        grid-area: dotmemory;
+      }
+    }
+  }
 
-          &[alt="dot-trace"] {
-            grid-area: dottrace;
-          }
+  & .extensions-text {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    column-gap: 100px;
+  }
 
-          &[alt="dot-cover"] {
-            grid-area: dotcover;
-          }
+  @media (--lg) {
+    justify-content: space-between;
+    column-gap: normal;
+  }
 
-          &[alt="dot-memory"] {
-            grid-area: dotmemory;
-          }
+  & .extensions-text-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 
+    & a {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.4;
+      color: #27282c;
 
-        }
+      &:hover {
+        color: #f76707;
       }
     }
 
-    & .extensions-text {
-      grid-row: 2;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 30px;
-      column-gap: 100px;
+    & .extensions {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
     }
-      @media (--lg) {
-        justify-content: space-between;
-        column-gap: normal;
+
+    & .box {
+      width: border-box;
+      height: 24px;
+      padding: 4px 15px 4px 15px;
+      object-fit: contain;
+      border-radius: 4px;
+      background-color: rgba(39, 40, 44, 0.05);
+
+      & p {
+        font-family: SFProText, system-ui;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: center;
+        color: rgba(39, 40, 44, 0.7);
       }
-
-      & .extensions-text-item {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-
-        & a {
-          font-size: 20px;
-          font-weight: bold;
-          line-height: 1.4;
-          color: #27282c;
-
-          &:hover {
-            color: #f76707;
-          }
-        }
-
-        & .extensions {
-          display: flex;
-          flex-direction: row;
-          gap: 12px;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-        }
-
-        & .box {
-          width: border-box;
-          height: 24px;
-          padding: 4px 15px 4px 15px;
-          object-fit: contain;
-          border-radius: 4px;
-          background-color: rgba(39, 40, 44, 0.05);
-
-          & p {
-            font-family: SFProText, system-ui;
-            font-size: 12px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.33;
-            letter-spacing: normal;
-            text-align: center;
-            color: rgba(39, 40, 44, 0.7);
-          }
-        }
-      }
+    }
+  }
 
 
   & h2 {
@@ -731,6 +795,10 @@ body {
       width: 100%;
       object-fit: scale-down;
       align-self: flex-start;
+
+      @media (--sm) {
+        display: none;
+      }
     }
 
     & .values-text {
@@ -771,6 +839,13 @@ body {
 
 .toolbox {
   background-color: #323236;
+
+  @media (--sm) {
+    padding: 64px 0;
+    & img {
+      display: none;
+    }
+  }
 
   & .wt-container {
     display: flex;
@@ -818,12 +893,6 @@ body {
         color: rgba(255, 255, 255, 0.6);
       }
     }
-
-    & img {
-      @media (--sm) {
-        display: none;
-      }
-    }
   }
 }
 
@@ -834,6 +903,7 @@ body {
     justify-content: space-between;
     grid-template-columns: 1fr 3fr;
     column-gap: 64px;
+    row-gap: 16px;
 
     @media (--sm) {
       grid-template-columns: 1fr;
@@ -850,7 +920,10 @@ body {
       color: #27282c;
 
       @media (--sm) {
-        grid-column: 1 / 3;
+        grid-column: 1 / 2;
+        font-size: 24px;
+        line-height: 1.33;
+        letter-spacing: normal;
       }
     }
 
@@ -863,6 +936,8 @@ body {
 
       @media (--sm) {
         grid-template-columns: repeat(2, 1fr);
+        justify-self: center;
+
       }
 
       & img {
@@ -878,7 +953,7 @@ body {
   margin-bottom: 48px;
 
   & .wt-container {
-  grid-template-areas:
+    grid-template-areas:
     "faq faq"
     "left-col right-col"
     "img download";
@@ -928,6 +1003,7 @@ body {
       letter-spacing: normal;
       color: rgba(39, 40, 44, 0.7);
     }
+
     & img[alt="faq-pic"] {
       grid-area: img;
       justify-self: end;
@@ -948,7 +1024,6 @@ body {
 
     & .faq-right-bot {
       grid-area: download;
-
 
 
       & h2 {
@@ -984,12 +1059,34 @@ body {
   padding-bottom: 96px;
 
   & .wt-container {
+    row-gap: 48px;
 
-    & .socials-left-col {
+    & h2 {
+      font-family: Gotham, system-ui;
+      font-size: 31px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.29;
+      letter-spacing: -0.5px;
+      color: #27282c;
+    }
+
+    & p {
+      font-family: SFProText, system-ui;
+      font-size: 20px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.4;
+      letter-spacing: normal;
+      color: #27282c;
+    }
+
+    & .socials-subscribe {
       display: flex;
       flex-direction: column;
       row-gap: 24px;
-      width: 75%;
 
       & form {
         display: flex;
@@ -998,6 +1095,11 @@ body {
         flex-wrap: wrap;
         justify-content: start;
         align-items: flex-start;
+
+        & input {
+          background: url("static/pics/socials/enter.png") no-repeat right 16px center;
+          background-size: 24px;
+        }
 
         & #email {
           width: 100%;
@@ -1064,7 +1166,7 @@ body {
       }
     }
 
-    & .socials-right-col {
+    & .socials-follow {
       display: flex;
       flex-direction: column;
       row-gap: 24px;
@@ -1115,6 +1217,11 @@ footer {
     align-items: flex-start;
     gap: 64px;
 
+    @media (--sm) {
+      flex-direction: column;
+      gap: 32px;
+    }
+
     & a {
       font-family: SFProText, sans-serif;
       font-size: 15px;
@@ -1139,6 +1246,22 @@ footer {
 
     & img {
       object-fit: contain;
+
+      &[alt="logo"] {
+        @media (--sm) {
+          display: none;
+        }
+      }
+
+      &[alt="logo-sm"] {
+        display: none;
+
+        @media (--sm) {
+          display: block;
+        }
+      }
+
+
     }
 
     & .about {
@@ -1192,6 +1315,11 @@ footer {
       line-height: 1.6;
       letter-spacing: normal;
       color: #fff;
+    }
+
+    @media (--sm) {
+      flex-direction: column;
+      gap: 12px;
     }
   }
 }
