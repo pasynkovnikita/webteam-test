@@ -548,18 +548,53 @@ body {
   & .wt-container {
     justify-content: space-between;
 
-    & h2 {
-      grid-row: 1;
-      font-family: Gotham, sans-serif;
-      font-size: 31px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.29;
-      letter-spacing: -0.5px;
-      color: #27282c;
+    @media (--sm) {
+      display: none;
     }
 
+
+    &-mobile {
+      display: none;
+      @media (--sm) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+      "extensions extensions"
+      "resharper resharper-c"
+      "resharper-text resharper-c-text"
+      "dottrace dotcover"
+      "dottrace-text dotcover-text"
+      "dotmemory ."
+      "dotmemory-text .";
+      }
+
+      & h2 {
+        grid-area: extensions;
+
+      }
+
+      #re-sharper {
+        grid-area: resharper-text;
+      }
+
+      #re-sharper-c {
+        grid-area: resharper-c-text;
+      }
+
+      #dot-trace {
+        grid-area: dottrace-text;
+      }
+
+      #dot-cover {
+        grid-area: dotcover-text;
+      }
+
+      #dot-memory {
+        grid-area: dotmemory-text;
+      }
+    }
+  }
     & .extensions-pics {
       grid-row: 2;
       display: grid;
@@ -579,6 +614,30 @@ body {
       & img {
         width: 72px;
         height: 72px;
+
+        @media (--sm) {
+          &[alt="re-sharper"] {
+            grid-area: resharper;
+          }
+
+          &[alt="resharper-c"] {
+            grid-area: resharper-c;
+          }
+
+          &[alt="dot-trace"] {
+            grid-area: dottrace;
+          }
+
+          &[alt="dot-cover"] {
+            grid-area: dotcover;
+          }
+
+          &[alt="dot-memory"] {
+            grid-area: dotmemory;
+          }
+
+
+        }
       }
     }
 
@@ -588,16 +647,11 @@ body {
       grid-template-columns: repeat(2, 1fr);
       row-gap: 30px;
       column-gap: 100px;
-
+    }
       @media (--lg) {
         justify-content: space-between;
         column-gap: normal;
       }
-
-      @media (--md) {
-      //column-gap: 80px;
-      }
-
 
       & .extensions-text-item {
         display: flex;
@@ -620,6 +674,7 @@ body {
           flex-direction: row;
           gap: 12px;
           flex-wrap: wrap;
+          justify-content: flex-start;
         }
 
         & .box {
@@ -643,7 +698,18 @@ body {
           }
         }
       }
-    }
+
+
+  & h2 {
+    grid-row: 1;
+    font-family: Gotham, sans-serif;
+    font-size: 31px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: -0.5px;
+    color: #27282c;
   }
 }
 
