@@ -33,6 +33,14 @@
   font-style: normal;
 }
 
+@custom-media --xlg screen and (max-width: 1540px);
+
+@custom-media --lg screen and (max-width: 1276px);
+
+@custom-media --md screen and (max-width: 1000px);
+
+@custom-media --sm screen and (max-width: 640px);
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -112,6 +120,14 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 132px;
+
+  @media (--lg) {
+    justify-content: space-between;
+  }
+
+  @media (--md) {
+    column-gap: 80px;
+  }
 }
 
 .header {
@@ -183,8 +199,9 @@ body {
   font-family: Gotham, system-ui;
 
   & img {
-    width: 484px;
-    height: 368px;
+    width: 100%;
+    object-fit: scale-down;
+    align-self: flex-start;
   }
 
   & h1 {
@@ -206,7 +223,6 @@ body {
     line-height: 1.43;
     letter-spacing: normal;
     color: #27282c;
-    margin-bottom: 48px;
   }
 
   & button {
@@ -274,13 +290,15 @@ body {
     & .ides-pics {
       display: grid;
       grid-template-columns: repeat(4, 72px);
-      grid-column-gap: 64px;
-      grid-row-gap: 48px;
 
-        & img {
-          width: 72px;
-          height: 72px;
-        }
+      @media (--lg) {
+        grid-template-columns: repeat(3, 72px);
+        justify-content: space-between;
+      }
+
+      & img {
+        width: 72px;
+        height: 72px;
       }
     }
   }
@@ -300,8 +318,13 @@ body {
     & .ides-text {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 30px;
       column-gap: 100px;
+      row-gap: 30px;
+
+      @media (--md) {
+        justify-content: space-between;
+        column-gap: normal;
+      }
 
       & .ides-text-item {
         display: flex;
@@ -323,6 +346,7 @@ body {
           display: flex;
           flex-direction: row;
           gap: 12px;
+          flex-wrap: wrap;
         }
 
         & .box {
@@ -352,7 +376,7 @@ body {
 
 .extensions {
   & .wt-container {
-    row-gap: 56px;
+    justify-content: space-between;
 
     & h2 {
       grid-row: 1;
@@ -371,6 +395,15 @@ body {
       display: grid;
       grid-template-columns: repeat(3, 72px);
       column-gap: 64px;
+
+      @media (--lg) {
+        justify-content: space-between;
+
+      }
+
+      @media (--md) {
+        column-gap: normal;
+      }
       row-gap: 48px;
 
       & img {
@@ -385,6 +418,15 @@ body {
       grid-template-columns: repeat(2, 1fr);
       row-gap: 30px;
       column-gap: 100px;
+
+      @media (--lg) {
+        justify-content: space-between;
+        column-gap: normal;
+      }
+
+      @media (--md) {
+      //column-gap: 80px;
+      }
 
 
       & .extensions-text-item {
@@ -407,6 +449,7 @@ body {
           display: flex;
           flex-direction: row;
           gap: 12px;
+          flex-wrap: wrap;
         }
 
         & .box {
@@ -445,11 +488,14 @@ body {
 .value {
 
   & .wt-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 132px;
     row-gap: 56px;
     margin-bottom: 84px;
+
+    img {
+      width: 100%;
+      object-fit: scale-down;
+      align-self: flex-start;
+    }
 
     & .values-text {
       display: flex;
@@ -495,6 +541,16 @@ body {
     align-items: center;
     justify-content: space-evenly;
 
+    @media (--md) {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+
+      & img {
+        justify-self: flex-end;
+      }
+    }
+
     & .toolbox-text {
       display: flex;
       flex-direction: column;
@@ -532,6 +588,15 @@ body {
 .businesses {
 
   & .wt-container {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 64px;
+
+    @media (--md) {
+      column-gap: 32px;
+
+    }
 
     & h2 {
       font-family: Gotham, sans-serif;
@@ -549,8 +614,12 @@ body {
       grid-template-columns: repeat(3, 1fr);
       justify-items: center;
       align-items: center;
-      column-gap: 128px;
       row-gap: 32px;
+
+      & img {
+        max-width: 100%;
+        object-fit: contain;
+      }
     }
 
   }
@@ -560,9 +629,7 @@ body {
   margin-bottom: 48px;
 
   & .wt-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 132px;
+
 
     & a:hover {
       color: #dc5b06;
@@ -604,8 +671,6 @@ body {
     }
 
 
-
-
     & .faq-left-top {
       grid-row: 2;
     }
@@ -617,6 +682,7 @@ body {
     & img {
       grid-row: 3;
       justify-self: end;
+      width: 100%;
     }
 
     & .faq-right-bot {
@@ -655,9 +721,6 @@ body {
   padding-bottom: 96px;
 
   & .wt-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 132px;
 
     & .socials-left-col {
       display: flex;
