@@ -128,6 +128,11 @@ body {
   @media (--md) {
     column-gap: 80px;
   }
+
+  @media (--sm) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
 }
 
 .header {
@@ -198,10 +203,27 @@ body {
 .all-products {
   font-family: Gotham, system-ui;
 
+  & .wt-container {
+
+    @media (--sm) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+  "all-products"
+    "toolkit"
+    "button"
+    "upgrade"
+    "img";
+    }
+  }
+
   & img {
     width: 100%;
     object-fit: scale-down;
     align-self: flex-start;
+    @media (--sm) {
+      grid-area: img;
+    }
   }
 
   & h1 {
@@ -212,6 +234,9 @@ body {
     line-height: 1.07;
     letter-spacing: -1.5px;
     color: #27282c;
+    @media (--sm) {
+      grid-area: all-products;
+    }
   }
 
   & h2 {
@@ -223,6 +248,9 @@ body {
     line-height: 1.43;
     letter-spacing: normal;
     color: #27282c;
+    @media (--sm) {
+      grid-area: toolkit;
+    }
   }
 
   & button {
@@ -237,6 +265,10 @@ body {
     &:hover {
       background-color: #dc5b06;
       color: white;
+    }
+
+    @media (--sm) {
+      grid-area: button;
     }
   }
 
@@ -266,111 +298,249 @@ body {
     line-height: 1.6;
     letter-spacing: normal;
     color: rgba(39, 40, 44, 0.7);
+    @media (--sm) {
+      grid-area: upgrade;
+    }
   }
 }
 
 
 .ides {
 
+  .wt-container {
+
+
+    &-mobile {
+      display: none;
+
+      @media (--sm) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+      "get-access get-access"
+      "ides ides"
+      "idea webstorm"
+      "idea-txt webstorm-txt"
+      "resharper appcode"
+      "resharper-txt appcode-txt"
+      "datagrip clion"
+      "datagrip-txt clion-txt"
+      "rider rubymine"
+      "rider-txt rubymine-txt"
+      "phpstorm pycharm"
+      "phpstorm-txt pycharm-txt";
+      }
+    }
+
+    @media (--sm) {
+      display: none;
+    }
+  }
+
+  & h2 {
+    font-family: Gotham, sans-serif;
+    font-size: 31px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: -0.5px;
+    color: #27282c;
+
+    @media (--sm) {
+      grid-area: ides;
+    }
+  }
+
+  & .ides-pics {
+    display: grid;
+    grid-template-columns: repeat(4, 72px);
+    column-gap: 64px;
+    row-gap: 48px;
+
+    @media (--lg) {
+      grid-template-columns: repeat(3, 72px);
+      justify-content: space-between;
+      column-gap: normal;
+    }
+  }
+
+  & img {
+    width: 72px;
+    height: 72px;
+
+    @media (--sm) {
+
+      &[alt="idea"] {
+        grid-area: idea;
+      }
+
+      &[alt="webstorm"] {
+        grid-area: webstorm;
+      }
+
+      &[alt="resharper"] {
+        grid-area: resharper;
+      }
+
+      &[alt="appcode"] {
+        grid-area: appcode;
+      }
+
+      &[alt="datagrip"] {
+        grid-area: datagrip;
+      }
+
+      &[alt="clion"] {
+        grid-area: clion;
+      }
+
+      &[alt="rider"] {
+        grid-area: rider;
+      }
+
+      &[alt="rubymine"] {
+        grid-area: rubymine;
+      }
+
+      &[alt="phpstorm"] {
+        grid-area: phpstorm;
+      }
+
+      &[alt="pycharm"] {
+        grid-area: pycharm;
+      }
+
+
+    }
+
+  }
+
   & .ides-left-col {
     display: flex;
     flex-direction: column;
 
-    & h2 {
-      font-family: Gotham, sans-serif;
-      font-size: 31px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.29;
-      letter-spacing: -0.5px;
+  }
+
+  & .ides-text-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    & a {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.4;
       color: #27282c;
+
+      &:hover {
+        color: #f76707;
+      }
     }
 
-    & .ides-pics {
-      display: grid;
-      grid-template-columns: repeat(4, 72px);
+    & .languages {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-      @media (--lg) {
-        grid-template-columns: repeat(3, 72px);
-        justify-content: space-between;
-      }
+    & .box {
+      width: border-box;
+      height: 24px;
+      padding: 4px 15px 4px 15px;
+      object-fit: contain;
+      border-radius: 4px;
+      background-color: rgba(39, 40, 44, 0.05);
 
-      & img {
-        width: 72px;
-        height: 72px;
+      & p {
+        font-family: SFProText, system-ui;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: center;
+        color: rgba(39, 40, 44, 0.7);
       }
     }
   }
 
+  & .get-access {
+    grid-area: get-access;
+    font-family: SFProText, system-ui;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: rgba(39, 40, 44, 0.7);
+  }
+
+
+  & .ides-text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+    row-gap: 30px;
+
+    @media (--md) {
+      justify-content: space-between;
+      column-gap: normal;
+    }
+
+    &-item {
+      @media (--sm) {
+        #idea {
+          grid-area: idea-txt;
+        }
+
+        #webstorm {
+          grid-area: webstorm-txt;
+        }
+
+        #resharper {
+          grid-area: resharper-txt;
+        }
+
+        #appcode {
+          grid-area: appcode-txt;
+        }
+
+        #datagrip {
+          grid-area: datagrip-txt;
+        }
+
+        #clion {
+          grid-area: clion-txt;
+        }
+
+        #rider {
+          grid-area: rider-txt;
+        }
+
+        #rubymine {
+          grid-area: rubymine-txt;
+        }
+
+        #phpstorm {
+          grid-area: phpstorm-txt;
+        }
+
+        #pycharm {
+          grid-area: pycharm-txt;
+        }
+
+
+      }
+
+    }
+  }
+
   & .ides-right-col {
-    & .get-access {
-      font-family: SFProText, system-ui;
-      font-size: 18px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.56;
-      letter-spacing: normal;
-      color: rgba(39, 40, 44, 0.7);
-    }
-
-    & .ides-text {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 100px;
-      row-gap: 30px;
-
-      @media (--md) {
-        justify-content: space-between;
-        column-gap: normal;
-      }
-
-      & .ides-text-item {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-
-        & a {
-          font-size: 20px;
-          font-weight: bold;
-          line-height: 1.4;
-          color: #27282c;
-
-          &:hover {
-            color: #f76707;
-          }
-        }
-
-        & .languages {
-          display: flex;
-          flex-direction: row;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-
-        & .box {
-          width: border-box;
-          height: 24px;
-          padding: 4px 15px 4px 15px;
-          object-fit: contain;
-          border-radius: 4px;
-          background-color: rgba(39, 40, 44, 0.05);
-
-          & p {
-            font-family: SFProText, system-ui;
-            font-size: 12px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.33;
-            letter-spacing: normal;
-            text-align: center;
-            color: rgba(39, 40, 44, 0.7);
-          }
-        }
-      }
-    }
   }
 }
 
