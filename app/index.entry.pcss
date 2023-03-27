@@ -17,6 +17,7 @@
   font-weight: bold;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Gotham-Bold';
   src: url("./static/fonts/Gotham-Bold.ttf") format("truetype"),
@@ -76,61 +77,6 @@ body {
   --silver-gray: #afb1b3;
   --azure: #27a4f7;
   --orange: #f76707;
-}
-
-.example-for-breakpoints {
-  @media (--xlg) {
-    color: blue;
-  }
-
-  @media (--lg) {
-    color: green;
-  }
-
-  @media (--md) {
-    color: white;
-  }
-
-  @media (--sm) {
-    color: black;
-  }
-
-  color: red;
-}
-
-.link {
-  --link-color: var(--highlight-color);
-
-  outline: none;
-  cursor: pointer;
-  font-size: inherit;
-  line-height: inherit;
-  border-bottom: 1px solid transparent
-}
-
-.link, .link:hover {
-  text-decoration: none;
-  color: var(--link-color)
-}
-
-.link:hover {
-  border-bottom-color: var(--link-color)
-}
-
-.link:active, .link:focus {
-  color: var(--link-color)
-}
-
-.text-1 {
-  letter-spacing: normal;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  color: rgba(39, 40, 44, .7);
-
-  &_theme_dark {
-    color: hsla(0, 0%, 100%, .6);
-  }
 }
 
 h1 {
@@ -251,6 +197,7 @@ h1 {
       gap: 8px;
       margin-left: 8px;
       margin-top: 24px;
+
       & img {
         width: 12px;
       }
@@ -357,24 +304,10 @@ h1 {
   & button {
     width: 174px;
     height: 48px;
-    padding: 0;
     border-radius: 25px;
     border: none;
     background-color: #f76707;
     transition: background-color 0.2s ease-in-out;
-
-    &:hover {
-      background-color: #dc5b06;
-      color: white;
-    }
-
-    @media (--sm) {
-      grid-area: button;
-    }
-  }
-
-  & a {
-    text-decoration: none;
     font-family: SFProText, sans-serif;
     font-size: 15px;
     font-weight: normal;
@@ -384,9 +317,15 @@ h1 {
     letter-spacing: normal;
     text-align: center;
     color: #fff;
+    cursor: pointer;
 
-    &:active {
+    &:hover {
+      background-color: #dc5b06;
       color: white;
+    }
+
+    @media (--sm) {
+      grid-area: button;
     }
   }
 
@@ -409,8 +348,6 @@ h1 {
 .ides {
 
   .wt-container {
-
-
     &-mobile {
       display: none;
 
@@ -418,6 +355,7 @@ h1 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
+        column-gap: 32px;
         grid-template-areas:
       "get-access get-access"
       "ides ides"
@@ -460,6 +398,10 @@ h1 {
     column-gap: 64px;
     row-gap: 48px;
 
+    & img.hover {
+      opacity: 0.25;
+    }
+
     @media (--lg) {
       grid-template-columns: repeat(3, 72px);
       justify-content: space-between;
@@ -470,6 +412,7 @@ h1 {
   & img {
     width: 72px;
     height: 72px;
+    transition: opacity 0.15s ease-in-out;
 
     @media (--sm) {
 
@@ -522,7 +465,7 @@ h1 {
   & .ides-left-col {
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
   }
 
   & .ides-text-item {
@@ -660,6 +603,7 @@ h1 {
       @media (--sm) {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        column-gap: 32px;
         grid-template-rows: auto;
         grid-template-areas:
       "extensions extensions"
@@ -715,9 +659,16 @@ h1 {
     row-gap: 48px;
 
   }
+
+  & img.hover {
+    opacity: 0.25;
+  }
+
   & img {
     width: 72px;
     height: 72px;
+    transition: opacity 0.15s ease-in-out;
+
 
     @media (--sm) {
       &[alt="re-sharper"] {
@@ -834,8 +785,10 @@ h1 {
       object-fit: scale-down;
       align-self: flex-start;
 
-      @media (--sm) {
-        display: none;
+      &[alt="value"] {
+        @media (--sm) {
+          display: none;
+        }
       }
     }
 
@@ -849,7 +802,13 @@ h1 {
         flex-direction: column;
         gap: 14px;
 
-        & p:nth-child(1) {
+        & img {
+          width: 48px;
+          object-fit: scale-down;
+          align-self: flex-start;
+        }
+
+        & p:nth-child(2) {
           font-family: SFProText, system-ui;
           font-size: 20px;
           font-weight: bold;
@@ -860,7 +819,7 @@ h1 {
           color: #27282c;
         }
 
-        & p:nth-child(2) {
+        & p:nth-child(3) {
           font-family: SFProText, system-ui;
           font-size: 18px;
           font-weight: normal;
@@ -975,6 +934,7 @@ h1 {
       @media (--sm) {
         grid-template-columns: repeat(2, 1fr);
         justify-self: center;
+        width: 100%;
 
       }
 
@@ -1194,13 +1154,12 @@ h1 {
           text-align: center;
           color: #fff;
           transition: background-color 0.2s ease-in-out;
+          cursor: pointer;
 
           &:hover {
             background-color: #dc5b06;
           }
-
         }
-
       }
     }
 
