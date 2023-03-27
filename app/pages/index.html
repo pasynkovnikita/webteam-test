@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body id="start">
 <div class="header">
     <div class="wt-container wt-row_justify_between">
         <div class="dropdown">
@@ -47,34 +47,34 @@
         <div class="ides-left-col">
             <h2>10 IDEs</h2>
             <div class="ides-pics wt-offset-top-24">
-                <img src="../static/pics/ides_pics/idea.png"
+                <img data-name="idea" src="../static/pics/ides_pics/idea.png"
                      srcset="../static/pics/ides_pics/idea@2x.png 2x, ../static/pics/ides_pics/idea@3x.png 3x"
                      alt="idea">
-                <img src="../static/pics/ides_pics/web-storm.png"
+                <img data-name="webstorm" src="../static/pics/ides_pics/web-storm.png"
                      srcset="../static/pics/ides_pics/web-storm@2x.png 2x, ../static/pics/ides_pics/web-storm@3x.png 3x"
                      alt="webstorm">
-                <img src="../static/pics/ides_pics/re-sharper.png"
+                <img data-name="resharper" src="../static/pics/ides_pics/re-sharper.png"
                      srcset="../static/pics/ides_pics/re-sharper@2x.png 2x, ../static/pics/ides_pics/re-sharper@3x.png 3x"
                      alt="resharper">
-                <img src="../static/pics/ides_pics/rider.png"
+                <img data-name="rider" src="../static/pics/ides_pics/rider.png"
                      srcset="../static/pics/ides_pics/rider@2x.png 2x, ../static/pics/ides_pics/rider@3x.png 3x"
                      alt="rider">
-                <img src="../static/pics/ides_pics/app-code.png"
+                <img data-name="appcode" src="../static/pics/ides_pics/app-code.png"
                      srcset="../static/pics/ides_pics/app-code@2x.png 2x, ../static/pics/ides_pics/app-code@3x.png 3x"
                      alt="appcode">
-                <img src="../static/pics/ides_pics/c-lion.png"
+                <img data-name="clion" src="../static/pics/ides_pics/c-lion.png"
                      srcset="../static/pics/ides_pics/c-lion@2x.png 2x, ../static/pics/ides_pics/c-lion@3x.png 3x"
                      alt="clion">
-                <img src="../static/pics/ides_pics/ruby-mine.png"
+                <img data-name="rubymine" src="../static/pics/ides_pics/ruby-mine.png"
                      srcset="../static/pics/ides_pics/ruby-mine@2x.png 2x, ../static/pics/ides_pics/ruby-mine@3x.png 3x"
                      alt="rubymine">
-                <img src="../static/pics/ides_pics/data-grip.png"
+                <img data-name="datagrip" src="../static/pics/ides_pics/data-grip.png"
                      srcset="../static/pics/ides_pics/data-grip@2x.png 2x, ../static/pics/ides_pics/data-grip@3x.png 3x"
                      alt="datagrip">
-                <img src="../static/pics/ides_pics/php-storm.png"
+                <img data-name="phpstorm" src="../static/pics/ides_pics/php-storm.png"
                      srcset="../static/pics/ides_pics/php-storm@2x.png 2x, ../static/pics/ides_pics/php-storm@3x.png 3x"
                      alt="phpstorm">
-                <img src="../static/pics/ides_pics/py-charm.png"
+                <img data-name="pycharm" src="../static/pics/ides_pics/py-charm.png"
                      srcset="../static/pics/ides_pics/py-charm@2x.png 2x, ../static/pics/ides_pics/py-charm@3x.png 3x"
                      alt="pycharm">
             </div>
@@ -83,64 +83,64 @@
             <p class="get-access">Get access to all JetBrains desktop tools including 10 IDEs, 2 extensions and 3
                 profilers </p>
             <div class="ides-text wt-offset-top-48">
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="idea">
                     <a>IntelliJ IDEA Ultimate</a>
                     <div class="languages">
                         <div class="box"><p>Kotlin</p></div>
                         <div class="box"><p>Java</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="webstorm">
                     <a>WebStorm</a>
                     <div class="languages">
                         <div class="box"><p>Javascript</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="rider">
                     <a>Rider</a>
                     <div class="languages">
                         <div class="box"><p>C#</p></div>
                         <div class="box"><p>.NET</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="rubymine">
                     <a>RubyMine</a>
                     <div class="languages">
                         <div class="box"><p>Ruby</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="resharper">
                     <a>ReSharper Ultimate</a>
                     <div class="languages">
                         <div class="box"><p>C++</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="appcode">
                     <a>AppCode</a>
                     <div class="languages">
                         <div class="box"><p>Swift</p></div>
                         <div class="box"><p>Objective-C</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="datagrip">
                     <a>DataGrip</a>
                     <div class="languages">
                         <div class="box"><p>mysql</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="clion">
                     <a>CLion</a>
                     <div class="languages">
                         <div class="box"><p>C</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="phpstorm">
                     <a>PhpStorm</a>
                     <div class="languages">
                         <div class="box"><p>PHP</p></div>
                     </div>
                 </div>
-                <div class="ides-text-item">
+                <div class="ides-text-item" data-name="pycharm">
                     <a>PyCharm</a>
                     <div class="languages">
                         <div class="box"><p>Python</p></div>
@@ -254,39 +254,39 @@
     <div class="wt-container">
         <h2>2 Extensions & 3 Profilers</h2>
         <div class="extensions-pics wt-offset-top-24">
-            <img src="../static/pics/extensions/re-sharper.png" alt="re-sharper">
-            <img src="../static/pics/extensions/re-sharper-c.png" alt="re-sharper-c">
-            <img src="../static/pics/extensions/dot-cover.png" alt="dot-cover">
-            <img src="../static/pics/extensions/dot-memory.png" alt="dot-memory">
-            <img src="../static/pics/extensions/dot-trace.png" alt="dot-trace">
+            <img data-name="resharper" src="../static/pics/extensions/re-sharper.png" alt="re-sharper">
+            <img data-name="resharper-c" src="../static/pics/extensions/re-sharper-c.png" alt="re-sharper-c">
+            <img data-name="dotcover" src="../static/pics/extensions/dot-cover.png" alt="dot-cover">
+            <img data-name="dotmemory" src="../static/pics/extensions/dot-memory.png" alt="dot-memory">
+            <img data-name="dottrace" src="../static/pics/extensions/dot-trace.png" alt="dot-trace">
         </div>
         <div class="extensions-text">
-            <div class="extensions-text-item">
+            <div class="extensions-text-item" data-name="resharper">
                 <a>ReSharper</a>
                 <div class="extensions">
                     <div class="box"><p>mysql</p></div>
                     <div class="box"><p>database</p></div>
                 </div>
             </div>
-            <div class="extensions-text-item">
+            <div class="extensions-text-item" data-name="resharper-c">
                 <a>ReSharper C++</a>
                 <div class="extensions">
                     <div class="box"><p>C++</p></div>
                 </div>
             </div>
-            <div class="extensions-text-item">
+            <div class="extensions-text-item" data-name="dotcover">
                 <a>dotCover</a>
                 <div class="extensions">
                     <div class="box"><p>mysql</p></div>
                 </div>
             </div>
-            <div class="extensions-text-item">
+            <div class="extensions-text-item" data-name="dotmemory">
                 <a>dotMemory</a>
                 <div class="extensions">
                     <div class="box"><p>C</p></div>
                 </div>
             </div>
-            <div class="extensions-text-item">
+            <div class="extensions-text-item" data-name="dottrace">
                 <a>dotTrace</a>
                 <div class="extensions">
                     <div class="box"><p>Ruby</p></div>
@@ -424,7 +424,7 @@
     </div>
 </div>
 
-<div class="socials">
+<div class="socials" id="socials">
     <div class="wt-container wt-row_justify_between">
         <div class="socials-subscribe">
             <h2>Stay updated</h2>
@@ -454,7 +454,7 @@
         </div>
     </div>
 </div>
-</body>
+
 <footer>
     <div class="container">
         <img src="../static/pics/footer/jb.png" alt="logo">
@@ -482,4 +482,50 @@
         <a href="#">Privacy & Security | Terms of Use</a>
     </div>
 </footer>
+
+<script>
+    function addHover(textSelector, iconsSelector) {
+        for (let i = 0; i < textSelector.length; i++) {
+            textSelector[i].addEventListener('mouseover', () => {
+                const dataName = textSelector[i].dataset.name;
+                for (let j = 0; j < iconsSelector.length; j++) {
+                    if (iconsSelector[j].dataset.name !== dataName) {
+                        iconsSelector[j].classList.add('hover');
+                    }
+                }
+            });
+            textSelector[i].addEventListener('mouseout', () => {
+                for (let j = 0; j < iconsSelector.length; j++) {
+                    iconsSelector[j].classList.remove('hover');
+                }
+            });
+        }
+    }
+
+    const idesText = document.querySelectorAll('.ides-text-item');
+    const idesIcons = document.querySelectorAll('.ides-pics img');
+    addHover(idesText, idesIcons);
+
+    const toolsText = document.querySelectorAll('.extensions-text-item');
+    const toolsIcons = document.querySelectorAll('.extensions-pics img');
+    addHover(toolsText, toolsIcons);
+
+    const links = document.querySelectorAll('.header a');
+    console.log(links);
+    for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = links[i].getAttribute('href');
+            const offsetTop = document.querySelector(href).offsetTop;
+            console.log(offsetTop);
+            window.scrollTo({
+                top: offsetTop - 72,
+                behavior: "smooth"
+            });
+        });
+    }
+
+</script>
+
+</body>
 </html>
